@@ -14,7 +14,6 @@ import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 import org.jetbrains.ide.RestService;
 
-import java.io.IOException;
 import java.util.Optional;
 
 // Inspiration
@@ -35,7 +34,7 @@ public class RunBuildHttpService extends RestService {
         // run action
 
         // urlDecoder.parameters()[name]?.lastOrNull()
-        Optional<String> actionId = queryStringDecoder.parameters().get("command").stream().findAny();
+        Optional<String> actionId = queryStringDecoder.parameters().get("action").stream().findAny();
 
         if (actionId.isEmpty()) {
             return "query argument command not found";
